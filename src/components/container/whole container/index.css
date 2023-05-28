@@ -1,0 +1,44 @@
+*{
+	margin:0px;
+	padding: 0px;
+}
+
+.Index{
+  width: 100%;
+  height: 100%;
+}
+.container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
+}
+
+.Main {
+  width: 100%;
+  height: 86%;
+  background-color: #E9EEF3;
+}
+
+.Header {
+  width: 100%;
+  height: 7%;
+  background-color: #B3C0D1;
+}
+
+.Footer {
+  width: 100%;
+  height: 7%;
+  background-color: #B3C0D1;
+}
+
+.Aside {
+  width: 200px;
+  height: 800px;
+  background-color: #84ec9c;
+}
+
+h3 {
+  text-align: center;
+}
