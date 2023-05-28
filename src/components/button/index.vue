@@ -6,7 +6,7 @@
 </button>
 </div>
 </template>
-<script>
+<script lang="ts">
 // import './index.css'
 // 解构
 import { defineComponent

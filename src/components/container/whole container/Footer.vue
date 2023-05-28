@@ -3,7 +3,7 @@
       <slot></slot>
     </div>
   </template>
-  <script>
+  <script lang="ts">
   // 模块化
   export default{
     name: "Footer", //组件名称

@@ -26,7 +26,7 @@ components: {
 setup(props, { emit }){
 // useVModel函数代理了父子之间的数据交互
 const inputValue = useVModel(props, 'modelValue', emit)
-console.log(inputValue.value);
+// console.log(inputValue.value);
 return {inputValue}
 }
 })

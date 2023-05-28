@@ -3,7 +3,7 @@
      <slot></slot>
     </div>
   </template>
-  <script>
+  <script lang="ts">
   // 模块化
   export default{
     name: "Header", //组件名称

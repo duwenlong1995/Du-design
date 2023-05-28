@@ -2,13 +2,19 @@ import { defineConfig } from "vite";
 import vue from "@vitejs/plugin-vue";
 import Markdown from "vite-plugin-md";
 import { resolve } from "path";
+import path from "path";
+
 
 export default defineConfig({
   plugins: [
     vue({
       include: [/\.vue$/, /\.md$/],
     }),
-    Markdown(),
+
+    Markdown({
+      builders: []
+    })
+
   ],
   // 打包
   build: {
@@ -28,7 +34,8 @@ export default defineConfig({
   },
   resolve: {
     alias: {
-      "@": resolve(__dirname, "src"),
+      '@': '/src/',
+      'vue': 'vue/dist/vue.esm-bundler.js'
     },
   },
 });

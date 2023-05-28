@@ -4,7 +4,7 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
 // 模块化
 import {ref,onMounted} from 'vue'
 export default {
