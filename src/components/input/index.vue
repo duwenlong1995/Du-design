@@ -27,11 +27,19 @@ setup(props, { emit }){
 // useVModel函数代理了父子之间的数据交互
 const inputValue = useVModel(props, 'modelValue', emit)
 // console.log(inputValue.value);
-return {inputValue}
+return {
+    inputValue,
+}
 }
 })
 </script>
 <style  lang='less' scoped>
 /* scoped 使用得定义的样式只在本页面内生效  */
+input{
+    border:1px solid #725EEB;
+}
+input:active{
+    border:1px solid #725EEB;
+}
 </style>
  
