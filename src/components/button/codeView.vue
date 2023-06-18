@@ -1,32 +1,28 @@
 <template>
+    <div class="showCode" @click="showOrhideCode">
+      <span>{{ showCode ? "HiddenCode" : "ShowCode" }}</span>
+      <i class="m-icon-code"></i>
+    </div>
   <div class="pre-code-box">
-      <pre
-     class="language-html" 
-      v-if="showCode"
-      >
+    <pre class="language-html" v-if="showCode">
     <code class="language-html">
         {{ sourceCode }}
     </code>
   </pre>
-  
-    <div class="showCode" @click="showOrhideCode">
-      <span>{{ showCode ? "隐藏代码" : "显示代码" }}</span>
-      <i class="m-icon-code"></i>
-    </div>
   </div>
 </template>
 <script setup>
 import { ref, onMounted } from "vue";
 const props = defineProps({
   compName: {
-    type:String,
-    default:"",
-required:true
+    type: String,
+    default: "",
+    required: true,
   },
   demoName: {
-    type:String,
-    default:"",
-    required:true
+    type: String,
+    default: "",
+    required: true,
   },
 });
 const border = ref("1px solid rgha(0,0,0,.06)");
@@ -46,14 +42,10 @@ async function getCode() {
   console.log(props.compName);
   if (isDev) {
     sourceCode.value = (
-      await import(
-        `../${props.compName}/doc/${props.demoName}.vue?raw`
-      )
+      await import(`../${props.compName}/doc/${props.demoName}.vue?raw`)
     ).default;
   } else {
-    sourceCode.value = await fetch(
-      `../${props.compName}/doc/${props.demoName}.vue`
-    ).then((res) => {
+    sourceCode.value = await fetch( `../${props.compName}/doc/${props.demoName}.vue`).then((res) => {
       res.text();
     });
   }

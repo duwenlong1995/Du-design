@@ -1,16 +1,26 @@
 <template>
-    <div class="container">
+  <div class="container">
     <!-- 定义子组件 -->
-
-    <d-button type="success">默认2</d-button>
-    </div>
-    </template>
-    <script setup>
-  
-     
-    </script>
-    <style scoped>
-    
-    
-    </style>
-     
+    <d-button round type="primary">primary</d-button>
+    <d-button round type="success">success</d-button>
+    <d-button round type="warning">warning</d-button>
+    <d-button round type="danger">danger</d-button>
+    <d-button round type="info">info</d-button>
+  </div>
+  <div class="container">
+    <!-- 定义子组件 -->
+    <d-button border round type="primary">primary</d-button>
+    <d-button border round type="success">success</d-button>
+    <d-button border round type="warning">warning</d-button>
+    <d-button border round type="danger">danger</d-button>
+    <d-button border round type="info">info</d-button>
+  </div>
+</template>
+<script setup></script>
+<style lang="scss" scoped>
+.container {
+  width: 45%;
+  display: flex;
+  justify-content: space-between;
+}
+</style>

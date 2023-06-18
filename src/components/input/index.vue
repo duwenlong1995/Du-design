@@ -7,8 +7,8 @@
 </template>
 <script>
 // 解构
-import { defineComponent
-} from 'vue'
+import "./scss/index.scss";
+import { defineComponent} from 'vue'
 import { useVModel } from '@vueuse/core'
 // 数据双向绑定 v-model语法糖 ---> :modelValue  +  @update:modelValue
 // 模块化
@@ -33,13 +33,3 @@ return {
 }
 })
 </script>
-<style  lang='less' scoped>
-/* scoped 使用得定义的样式只在本页面内生效  */
-input{
-    border:1px solid #725EEB;
-}
-input:active{
-    border:1px solid #725EEB;
-}
-</style>
- 

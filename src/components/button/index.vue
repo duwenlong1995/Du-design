@@ -1,69 +1,63 @@
 <template>
-<div :class="dClass">
-<!-- 定义子组件 -->
-<button>
-    <slot></slot>
-</button>
-</div>
+  <!-- 定义子组件 -->
+  <div>
+    <button
+      class="dButton"
+      :class="[theme, shape, bordering]"
+      @click="change"
+      :disabled="disabled">
+      <span>
+        <slot></slot>
+      </span>
+    </button>
+  </div>
 </template>
 <script lang="ts">
-// import './index.css'
+import "./css/index.scss";
 // 解构
-import { defineComponent
-} from 'vue'
-import {computed} from 'vue'
+import { defineComponent } from "vue";
+import { computed } from "vue";
 // 模块化
 export default defineComponent({
-name:'dButton', //组件名称
-props: {
-// 接收父组件数据
-type:{
-    type:String,
-    default:'default',
-}
-},
-components: {
-// 定义子组件
-},
-setup(props){
-// 这里没有this,直接使用props里数据
-const dClass =computed(()=>{
-    return[
-    "dButton", `dButton-${props.type}`
-    ] 
-})
-return {
-    dClass
-}
-}
-})
+  name: "dButton", //组件名称
+  props: {
+    // 接收父组件数据
+    type: {
+      type: String,
+      default: "default",
+    },
+    round: Boolean,
+    disabled: Boolean,
+    loading: Boolean,
+    border: Boolean,
+  },
+  components: {
+    // 定义子组件
+  },
+  setup(props, context) {
+    // 这里没有this,直接使用props里数据
+    // 按钮的类型
+    const theme = computed(() => {
+      return props.type ? `dButton-${props.type}` : "";
+    });
+    // 按钮的形状
+    const shape = computed(() => {
+      return props.round ? `round-${props.round}` : "";
+    });
+    // 边框按钮
+    const bordering = computed(() => {
+      return props.border ? `border-${props.type}-${props.border}` : "";
+    });
+    // 方法
+    function change() {
+      context.emit("click");
+    }
+    return {
+      theme,
+      shape,
+      change,
+      bordering,
+    };
+  },
+});
 </script>
-<style lang="scss" scoped>
-button{
-    outline:none;
-    border:0;
-    background:none;
-    cursor:pointer;
-    &:hover,&focus{
-    opacity:0.8
-}
-}
-.dButton{
-button{
-padding:12px 24px;
-border-radius:4px;
-border:1px solid #b4b0b0;
-
-}
-}
-.dButton-default{
-button{
-    background:#b4b0b0
-}
-}
-.dButton-success{
-button{
-    background:green;
-}
-}
-</style>

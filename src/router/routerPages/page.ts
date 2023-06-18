@@ -12,10 +12,16 @@ export default[
         path:'input',
         name:'input',
         component: () => import("../../components/input/doc/doc.md"),
-      },{
-        path:'table',
-        name:'table',
-        component: () => import("../../components/table/doc/doc.md"),
+      },
+      // {
+      //   path:'table',
+      //   name:'table',
+      //   component: () => import("../../components/table/doc/doc.md"),
+      // },
+      {
+        path:'card',
+        name:'card',
+        component: () => import("../../components/card/doc/doc.md"),
       },
     ] 
 }

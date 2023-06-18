@@ -1,0 +1,160 @@
+.dButton {
+  width: 8rem;
+  height: 1.5rem;
+  // padding: 12px 24px;
+  border-radius: 4px;
+  border: 1px solid #b4b0b0;
+  cursor: pointer;
+  user-select: none;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    &:hover,
+&:focus {
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  outline: 0 !important;
+}
+}
+
+//  主要状态样式
+.dButton-primary {
+  color: #fff;
+  background-color: #35bdff;
+  border-color: #35bdff;
+
+  //点击按钮出现按钮主题颜色边框，按钮颜色变暗
+  &:active {
+    color: #495057;
+    background-color: #02acff;
+    border-color: #00a4f4;
+    outline: 0;
+    box-shadow: 0 0 0 0.15rem rgba(53, 189, 255, 0.5)
+  }
+  //   鼠标移入主题暗色
+  &:hover {
+    color: #fff;
+    background-color: #0fb1ff;
+    border-color: #02acff;
+  }
+}
+//  成功状态样式
+.dButton-success {
+  color: #fff;
+  background-color: #44c553;
+  border-color: #44c553;
+
+  //点击按钮出现按钮主题颜色边框，按钮颜色变暗
+  &:active {
+    color: #495057;
+    background-color: #33a340;
+    border-color: #309a3c;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(68, 197, 83, 0.5);
+  }
+  //   鼠标移入主题暗色
+  &:hover {
+    color: #fff;
+    background-color: #36ad44;
+    border-color: #33a340;
+  }
+}
+//  警告状态样式
+.dButton-warning {
+  color: #212529;
+  background-color: #ffde03;
+  border-color: #ffde03;
+
+  //点击按钮出现按钮主题颜色边框，按钮颜色变暗
+  &:active {
+    background-color: #cfb400;
+    border-color: #ffdd03;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(255, 222, 3, 0.5);
+  }
+  &:hover {
+    color: #fff;
+    background-color: #dcbf00;
+    border-color: #cfb400;
+  }
+}
+//  危险状态样式
+.dButton-danger {
+  color: #fff;
+  background-color: #ff5916;
+  border-color: #ff5916;
+
+  //点击按钮出现按钮主题颜色边框，按钮颜色变暗
+  &:active {
+    color: #fff;
+    background-color: #e24100;
+    border-color: #d53d00;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(255, 89, 22, 0.5);
+  }
+  &:hover {
+    color: #fff;
+    background-color: #ef4500;
+    border-color: #e24100;
+  }
+}
+//  通知状态样式
+.dButton-info {
+  color: #212529;
+  background-color: #09ebaf;
+  border-color: #09ebaf;
+
+  &:hover {
+    color: #fff;
+    background-color: #08c694;
+    border-color: #07ba8a;
+  }
+  //点击按钮出现按钮主题颜色边框，按钮颜色变暗
+  &:active {
+    color: #fff;
+    background-color: #07ba8a;
+    border-color: #07ae81;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(9, 235, 175, 0.5);
+  }
+}
+//  圆角按钮样式开始
+.round-true {
+    border-radius:100px;
+}
+//  圆角按钮样式结束
+//  边框按钮样式开始
+.border-primary-true{
+  color: #02acff;
+  background-color: rgba(0, 0, 0, 0);
+}
+.border-success-true{
+  color: #44c553;
+  background-color: rgba(0, 0, 0, 0);
+}
+.border-warning-true{
+  color: #ffde03;
+  background-color: rgba(0, 0, 0, 0);
+}
+.border-danger-true{
+  color: #ff5916;
+  background-color: rgba(0, 0, 0, 0);
+}
+.border-info-true{
+  color: #09ebaf;
+  background-color: rgba(0, 0, 0, 0);
+}
+//  边框按钮样式结束
+//  文字按钮样式开始
+.dButton-text {
+  color: #02acff;
+  background:none; 
+  border:none;  
+  &:active {
+    color: #121212;
+  }
+}
+//  文字按钮样式结束
+//  按钮禁用样式开始
+.dButton[disabled] {
+    opacity: 0.7;
+}
+//  按钮禁用样式结束
