@@ -1,6 +1,6 @@
 .dButton {
-  width: 8rem;
-  height: 1.5rem;
+  width: 11rem;
+  height: 2rem;
   // padding: 12px 24px;
   border-radius: 4px;
   border: 1px solid #b4b0b0;
@@ -8,11 +8,11 @@
   user-select: none;
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
     border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-    &:hover,
-&:focus {
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
-  outline: 0 !important;
-}
+  &:hover,
+  &:focus {
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+    outline: 0 !important;
+  }
 }
 
 //  主要状态样式
@@ -27,7 +27,7 @@
     background-color: #02acff;
     border-color: #00a4f4;
     outline: 0;
-    box-shadow: 0 0 0 0.15rem rgba(53, 189, 255, 0.5)
+    box-shadow: 0 0 0 0.15rem rgba(53, 189, 255, 0.5);
   }
   //   鼠标移入主题暗色
   &:hover {
@@ -118,43 +118,53 @@
 }
 //  圆角按钮样式开始
 .round-true {
-    border-radius:100px;
+  border-radius: 100px;
 }
 //  圆角按钮样式结束
 //  边框按钮样式开始
-.border-primary-true{
+.border-primary-true {
   color: #02acff;
   background-color: rgba(0, 0, 0, 0);
 }
-.border-success-true{
+.border-success-true {
   color: #44c553;
   background-color: rgba(0, 0, 0, 0);
 }
-.border-warning-true{
+.border-warning-true {
   color: #ffde03;
   background-color: rgba(0, 0, 0, 0);
 }
-.border-danger-true{
+.border-danger-true {
   color: #ff5916;
   background-color: rgba(0, 0, 0, 0);
 }
-.border-info-true{
+.border-info-true {
   color: #09ebaf;
   background-color: rgba(0, 0, 0, 0);
 }
 //  边框按钮样式结束
 //  文字按钮样式开始
-.dButton-text {
+.dButton-textPrimary {
   color: #02acff;
-  background:none; 
-  border:none;  
+  background: none;
+  border: none;
+  box-shadow: 0 0 0 0 !important;
   &:active {
-    color: #121212;
+    opacity: 0.6;
+  }
+}
+.dButton-textDelete {
+  color: #ff5916;
+  background: none;
+  border: none;
+  box-shadow: 0 0 0 0 !important;
+  &:active {
+    opacity: 0.6;
   }
 }
 //  文字按钮样式结束
 //  按钮禁用样式开始
 .dButton[disabled] {
-    opacity: 0.7;
+  opacity: 0.7;
 }
 //  按钮禁用样式结束

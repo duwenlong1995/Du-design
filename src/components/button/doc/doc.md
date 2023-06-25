@@ -1,24 +1,26 @@
-## Button按钮
-###  Buttons
+## Button 按钮
+
+### Buttons
+
 <demo/>
 
-<code-view compName="button" demoName="demo"></code-view>
+### Round
 
-###  Round
 <demo1/>
 
-###  disabled
+### disabled
+
 <demo2/>
 
-###  text
+### text
+
 <demo3/>
 
-###  Sizes
+### Sizes
+
 <script setup>
     import demo from './demo.vue'
     import demo1 from './demo1.vue'
-     import demo2 from './demo2.vue'
-      import demo3 from './demo3.vue'
-    import codeView from '../codeView.vue'
-  
+    import demo2 from './demo2.vue'
+    import demo3 from './demo3.vue'
 </script>

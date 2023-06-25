@@ -1,11 +1,14 @@
 <template>
   <div>
-    <div class="dCard" style="width: 18rem"  :class="[shadowStyle]">
-        <div class="card-head" v-if="$slots.header || header">
-            <slot name="header">{{ header }}</slot>
-        </div>
+    <div class="dCard" :class="[shadowStyle]">
+      <div class="card-head" v-if="$slots.header || header">
+        <slot name="header"></slot>
+      </div>
       <div class="card-body">
         <slot></slot>
+      </div>
+      <div class="card-foot" v-if="$slots.footer || footer">
+        <slot name="footer"></slot>
       </div>
     </div>
   </div>
@@ -21,21 +24,21 @@ export default defineComponent({
   props: {
     // 接收父组件数据
     header: {},
-      bodyStyle: {},
-      shadow: {
-        type: String
-      }
+    bodyStyle: {},
+    shadow: {
+      type: String,
+    },
   },
   components: {
     // 定义子组件
   },
   setup(props) {
     // 这里没有this,直接使用props里数据
-     // 卡片阴影的类型
-     const shadowStyle = computed(() => {
+    // 卡片阴影的类型
+    const shadowStyle = computed(() => {
       return props.shadow ? `dCard-${props.shadow}` : "";
     });
-    return {shadowStyle};
+    return { shadowStyle };
   },
 });
 </script>

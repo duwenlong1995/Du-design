@@ -1,8 +1,8 @@
 <template>
     <div class="container">
       <!-- 定义子组件 -->
-      <d-button type="text">edit</d-button>
-      <d-button type="text">delete</d-button>
+      <d-button type="textPrimary">edit</d-button>
+      <d-button type="textDelete">delete</d-button>
     </div>
   </template>
   <script setup></script>

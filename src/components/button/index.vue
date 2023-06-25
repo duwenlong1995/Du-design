@@ -13,7 +13,7 @@
   </div>
 </template>
 <script lang="ts">
-import "./css/index.scss";
+import "./scss/index.scss";
 // 解构
 import { defineComponent } from "vue";
 import { computed } from "vue";

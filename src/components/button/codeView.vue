@@ -1,14 +1,16 @@
 <template>
+  <div class="whole">
     <div class="showCode" @click="showOrhideCode">
       <span>{{ showCode ? "HiddenCode" : "ShowCode" }}</span>
       <i class="m-icon-code"></i>
     </div>
-  <div class="pre-code-box">
-    <pre class="language-html" v-if="showCode">
+    <div class="codeBox">
+      <pre class="language-html" v-if="showCode">
     <code class="language-html">
         {{ sourceCode }}
     </code>
   </pre>
+    </div>
   </div>
 </template>
 <script setup>
@@ -39,13 +41,14 @@ const sourceCode = ref("");
 async function getCode() {
   const isDev = import.meta.env.MODE === "development";
   // 判断是否是开发环境还是生产环境
-  console.log(props.compName);
   if (isDev) {
-    sourceCode.value = (
-      await import(`../${props.compName}/doc/${props.demoName}.vue?raw`)
-    ).default;
+    console.log(props.compName);
+    console.log(props.demoName);
+    sourceCode.value = (await import(`../${props.compName}/doc/${props.demoName}.vue?raw`)).default;
   } else {
-    sourceCode.value = await fetch( `../${props.compName}/doc/${props.demoName}.vue`).then((res) => {
+    sourceCode.value = await fetch(
+      `../${props.compName}/doc/${props.demoName}.vue`
+    ).then((res) => {
       res.text();
     });
   }
@@ -54,4 +57,28 @@ onMounted(() => {
   getCode();
 });
 </script>
-<style scoped></style>
+<style lang="scss" scoped>
+.whole {
+  display: flex;
+  flex-direction: column;
+  .showCode {
+    display: flex;
+    justify-content: center;
+  align-items: center;
+    width: 950px;
+    height: 30px;
+    margin-top: 20px;
+    user-select: none;
+  }
+  .showCode:hover {
+    background-color: #f9fafc;
+    border-radius: 0.2rem;
+    cursor: pointer;
+  }
+  .showCode:active{
+    border: 1px solid #00a4f4;
+  }
+  .codeBox {
+  }
+}
+</style>

@@ -4,7 +4,7 @@
       <d-card shadow="always">
         <div slot="header" style="display: flex; justify-content: space-between;">
           <span>title</span>
-        <d-button type="text">primary</d-button>
+        <d-button type="textPrimary">primary</d-button>
         </div>
         <div v-for="o in 4" :key="o" class="text item">
       {{'content ' + o }}
