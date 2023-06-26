@@ -42,13 +42,11 @@ async function getCode() {
   const isDev = import.meta.env.MODE === "development";
   // 判断是否是开发环境还是生产环境
   if (isDev) {
-    console.log(props.compName);
-    console.log(props.demoName);
-    sourceCode.value = (await import(`../${props.compName}/doc/${props.demoName}.vue?raw`)).default;
+    let urlOne=`../${props.compName}/doc/${props.demoName}.vue?raw`
+    sourceCode.value = (await import(urlOne)).default;
   } else {
-    sourceCode.value = await fetch(
-      `../${props.compName}/doc/${props.demoName}.vue`
-    ).then((res) => {
+    let urlTwo=`../${props.compName}/doc/${props.demoName}.vue`
+    sourceCode.value = await fetch(urlTwo).then((res) => {
       res.text();
     });
   }
