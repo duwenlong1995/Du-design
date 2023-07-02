@@ -1,7 +1,11 @@
 <template>
   <div class="container">
     <!-- 定义子组件 -->
-    <dTable :columns="tableData" :headers="tableHeader"> </dTable>
+    <dTable :columns="tableData">
+      <d-table-column label="日期" data="date"></d-table-column>
+      <d-table-column label="姓名" data="name"></d-table-column>
+      <d-table-column label="地址" data="address"></d-table-column>
+    </dTable>
   </div>
 </template>
 <script setup>
@@ -31,12 +35,6 @@ const tableData = reactive([
     name: "王小虎",
     address: "上海市普陀区金沙江路 1516 弄",
   }
-]);
-const tableHeader = reactive([
-  { id: 0, tag: "日期" },
-  { id: 1, tag: "姓名" },
-  { id: 2, tag: "地址" },
-  { id: 3, tag: "地址" },
 ]);
 </script>
 <style scoped>
